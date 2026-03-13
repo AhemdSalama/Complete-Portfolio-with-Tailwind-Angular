@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio repository! This project is a fully responsive, highly interactive web developer and AI automation engineer portfolio built with **Angular** and **Tailwind CSS**.
 
-![Portfolio Preview](https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200) ## ✨ Key Features
+## ✨ Key Features
 
 * **🎨 Modern UI/UX:** Built with Glassmorphism concepts, smooth gradients, and elegant hover animations.
 * **🌗 Custom Theme Switcher:** A dynamic modal allowing users to switch between multiple color themes (Ocean Blue, Sunset Orange, Forest Green, etc.).
