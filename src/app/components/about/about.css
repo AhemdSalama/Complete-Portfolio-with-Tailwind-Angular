@@ -1,0 +1,9 @@
+.prifile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid transparent;
+  padding: 6px;
+  margin: 5px;
+}

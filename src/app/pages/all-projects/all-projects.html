@@ -1,0 +1,109 @@
+<div class="min-h-screen bg-slate-50 pt-24 pb-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <a
+      routerLink="/"
+      fragment="projects"
+      class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-blue-600 mb-10 transition-colors group"
+    >
+      <svg
+        class="w-5 h-5 transition-transform group-hover:-translate-x-1"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+        ></path>
+      </svg>
+      Back to Portfolio
+    </a>
+
+    <div class="mb-16">
+      <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-6">
+        Full Portfolio
+      </h1>
+      <p class="text-xl text-slate-500 max-w-3xl leading-relaxed font-medium">
+        Explore my complete collection of projects across Web Development, Artificial Intelligence,
+        and Smart Automation.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-3 mb-12">
+      <button
+        *ngFor="let filter of filters"
+        (click)="setFilter(filter)"
+        [class.bg-slate-900]="activeFilter === filter"
+        [class.text-white]="activeFilter === filter"
+        [class.bg-white]="activeFilter !== filter"
+        [class.text-slate-600]="activeFilter !== filter"
+        class="px-7 py-3 rounded-2xl font-bold text-sm transition-all duration-300 shadow-sm border border-slate-200 hover:border-slate-400"
+      >
+        {{ filter }}
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div
+        *ngFor="let p of filteredProjects"
+        class="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl hover:border-blue-200 transition-all duration-500 group flex flex-col h-full overflow-hidden hover:-translate-y-2"
+      >
+        <div class="relative h-60 overflow-hidden bg-slate-100">
+          <span
+            class="absolute top-4 left-4 z-10 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-black text-slate-900 border border-slate-200"
+          >
+            {{ p.category }}
+          </span>
+          <img
+            [src]="p.image"
+            [alt]="p.title"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+
+        <div class="p-8 flex flex-col flex-grow">
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">{{ p.title }}</h3>
+          <p class="text-slate-500 mb-6 leading-relaxed flex-grow font-medium">
+            {{ p.description }}
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span
+              *ngFor="let tag of p.tags"
+              class="px-3 py-1.5 bg-slate-50 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold"
+            >
+              {{ tag }}
+            </span>
+          </div>
+
+          <div class="flex items-center justify-between pt-6 border-t border-slate-100 mt-auto">
+            <div class="flex gap-2">
+              <div class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold">
+                GitHub
+              </div>
+              <div class="px-4 py-2 rounded-xl bg-blue-50 text-blue-700 text-xs font-bold">
+                Demo
+              </div>
+            </div>
+            <a
+              [routerLink]="['/project', p.id]"
+              class="text-sm font-black text-slate-900 hover:text-blue-600 flex items-center gap-1 transition-colors"
+            >
+              Details
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
