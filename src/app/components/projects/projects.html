@@ -2,8 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <div
-        class="inline-block px-4 py-1.5 rounded-full bg-blue-100/50 border border-blue-200 text-blue-700 font-bold text-sm mb-4"
-      >
+        class="inline-block px-4 py-1.5 rounded-full bg-blue-100/50 border border-blue-200 text-blue-700 font-bold text-sm mb-4">
         {{ translationService.translate('projects', 'tag') }}
       </div>
       <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
@@ -15,35 +14,24 @@
     </div>
 
     <div class="flex flex-wrap justify-center gap-3 mb-12">
-      <button
-        *ngFor="let filter of filters"
-        (click)="setFilter(filter)"
-        [class.bg-slate-900]="activeFilter === filter"
-        [class.text-white]="activeFilter === filter"
-        [class.bg-white]="activeFilter !== filter"
+      <button *ngFor="let filter of filters" (click)="setFilter(filter)" [class.bg-slate-900]="activeFilter === filter"
+        [class.text-white]="activeFilter === filter" [class.bg-white]="activeFilter !== filter"
         [class.text-slate-600]="activeFilter !== filter"
-        class="px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-sm border border-slate-200 hover:border-slate-400"
-      >
+        class="px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-sm border border-slate-200 hover:border-slate-400">
         {{ getTranslatedFilter(filter) }}
       </button>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-      <div
-        *ngFor="let p of filteredProjects"
-        class="group bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl hover:border-blue-200 transition-all duration-500 flex flex-col h-full overflow-hidden hover:-translate-y-2"
-      >
+      <div *ngFor="let p of filteredProjects"
+        class="group bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl hover:border-blue-200 transition-all duration-500 flex flex-col h-full overflow-hidden hover:-translate-y-2">
         <div class="relative h-60 overflow-hidden bg-slate-100">
           <span
-            class="absolute top-4 left-4 z-10 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-black text-slate-900 border border-slate-200 shadow-sm"
-          >
+            class="absolute top-4 left-4 z-10 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-black text-slate-900 border border-slate-200 shadow-sm">
             {{ getTranslatedFilter(p.category) }}
           </span>
-          <img
-            [src]="p.image"
-            [alt]="p.title"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          />
+          <img [src]="p.image" [alt]="p.title"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
         </div>
 
         <div class="p-8 flex flex-col flex-grow">
@@ -55,48 +43,32 @@
           </p>
 
           <div class="flex flex-wrap gap-2 mb-8">
-            <span
-              *ngFor="let tag of p.tags"
-              class="px-3 py-1.5 bg-slate-50 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold"
-            >
+            <span *ngFor="let tag of p.tags"
+              class="px-3 py-1.5 bg-slate-50 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold">
               {{ tag }}
             </span>
           </div>
 
           <div class="flex items-center justify-between pt-6 border-t border-slate-100 mt-auto">
             <div class="flex gap-2">
-              <a
-                [href]="p.githubLink"
-                class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-colors"
-              >
+              <a [href]="p.githubLink"
+                class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-colors">
                 {{ translationService.translate('projects', 'btnGithub') }}
               </a>
-              <a
-                [href]="p.demoLink"
-                class="px-4 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-bold transition-colors"
-              >
+              <a [href]="p.demoLink"
+                class="px-4 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-bold transition-colors">
                 {{ translationService.translate('projects', 'btnDemo') }}
               </a>
             </div>
 
-            <a
-              [routerLink]="['/project', p.id]"
-              class="text-sm font-black text-slate-900 hover:text-blue-600 flex items-center gap-1 transition-colors group/link"
-            >
+            <a [routerLink]="['/project', p.id]"
+              class="text-sm font-black text-slate-900 hover:text-blue-600 flex items-center gap-1 transition-colors group/link">
               {{ translationService.translate('projects', 'btnDetails') }}
-              <svg
-                [class.rotate-180]="translationService.currentLang === 'ar'"
-                class="w-4 h-4 transition-transform group-hover/link:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
+              <svg [class.rotate-180]="translationService.currentLang === 'ar'"
+                class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
               </svg>
             </a>
           </div>
@@ -105,24 +77,13 @@
     </div>
 
     <div class="text-center">
-      <a
-        routerLink="/all-projects"
-        class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-slate-900 text-white font-bold hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-1 group"
-      >
+      <a routerLink="/all-projects"
+        class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-slate-900 text-white font-bold hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:-translate-y-1 group">
         {{ translationService.translate('projects', 'btnSeeAll') }}
-        <svg
-          [class.rotate-180]="translationService.currentLang === 'ar'"
-          class="w-5 h-5 transition-transform group-hover:translate-x-1"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-          ></path>
+        <svg [class.rotate-180]="translationService.currentLang === 'ar'"
+          class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
         </svg>
       </a>
     </div>
