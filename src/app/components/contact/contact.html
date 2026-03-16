@@ -1,107 +1,235 @@
 <section id="contact" class="relative bg-slate-900 pt-24 pb-16 overflow-hidden">
-  
   <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-10 -mt-[1px]">
-    <svg class="relative block w-full h-[50px] md:h-[80px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+    <svg
+      class="relative block w-full h-[50px] md:h-[80px]"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+        class="fill-white"
+      ></path>
     </svg>
   </div>
   <div class="absolute inset-0 z-0 pointer-events-none">
-    <div class="absolute top-40 right-10 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px]"></div>
-    <div class="absolute bottom-10 left-10 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px]"></div>
+    <div
+      class="absolute top-40 right-10 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px]"
+    ></div>
+    <div
+      class="absolute bottom-10 left-10 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px]"
+    ></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-10">
-    
     <div class="mb-24 text-center">
-      <p class="text-sm font-bold text-blue-400 uppercase tracking-widest mb-6">Core Technologies</p>
+      <p class="text-sm font-bold text-blue-400 uppercase tracking-widest mb-6">
+        {{ translationService.translate('contact', 'coreTech') }}
+      </p>
       <div class="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto">
-        <span class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default">Angular & React</span>
-        <span class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default">Node.js & Express</span>
-        <span class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default">Python & FastAPI</span>
-        <span class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default">TypeScript</span>
-        <span class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default">OpenAI API</span>
-        <span class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default">Zapier & Make.com</span>
-        <span class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default">PostgreSQL & MongoDB</span>
+        <span
+          class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default"
+          >Angular & React</span
+        >
+        <span
+          class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default"
+          >Node.js & Express</span
+        >
+        <span
+          class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default"
+          >Python & FastAPI</span
+        >
+        <span
+          class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default"
+          >TypeScript</span
+        >
+        <span
+          class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default"
+          >OpenAI API</span
+        >
+        <span
+          class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default"
+          >Zapier & Make.com</span
+        >
+        <span
+          class="px-5 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-slate-300 font-semibold hover:border-blue-400 hover:text-white transition-colors cursor-default"
+          >PostgreSQL & MongoDB</span
+        >
       </div>
     </div>
+
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-4xl font-extrabold text-white tracking-tight mb-4">Let's Build Something Great</h2>
-      <p class="text-lg text-slate-400 font-medium">Have a project in mind? Let's work together to bring your ideas to life.</p>
+      <h2 class="text-4xl font-extrabold text-white tracking-tight mb-4">
+        {{ translationService.translate('contact', 'title') }}
+      </h2>
+      <p class="text-lg text-slate-400 font-medium">
+        {{ translationService.translate('contact', 'subtitle') }}
+      </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-      
       <div class="space-y-10">
-        
         <div class="space-y-6">
-          <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors">
+          <div
+            class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors"
+          >
             <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
             </div>
             <div>
-              <h4 class="text-white font-bold mb-1">Email</h4>
-              <a href="mailto:your.email@example.com" class="text-slate-400 hover:text-blue-400 transition-colors">ahmed.salama&#64;example.com</a>
+              <h4 class="text-white font-bold mb-1">
+                {{ translationService.translate('contact', 'email') }}
+              </h4>
+              <a
+                href="mailto:ahmed.salama@example.com"
+                class="text-slate-400 hover:text-blue-400 transition-colors"
+                >ahmed.salama&#64;example.com</a
+              >
             </div>
           </div>
 
-          <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors">
+          <div
+            class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors"
+          >
             <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path>
+              </svg>
             </div>
             <div>
-              <h4 class="text-white font-bold mb-1">Phone / WhatsApp</h4>
+              <h4 class="text-white font-bold mb-1">
+                {{ translationService.translate('contact', 'phone') }}
+              </h4>
               <p class="text-slate-400">+20 100 000 0000</p>
             </div>
           </div>
 
-          <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors">
+          <div
+            class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors"
+          >
             <div class="p-3 bg-purple-500/10 text-purple-400 rounded-xl">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
             </div>
             <div>
-              <h4 class="text-white font-bold mb-1">Location</h4>
-              <p class="text-slate-400">Cairo, Egypt (Remote Worldwide)</p>
+              <h4 class="text-white font-bold mb-1">
+                {{ translationService.translate('contact', 'location') }}
+              </h4>
+              <p class="text-slate-400">
+                {{ translationService.translate('contact', 'locationText') }}
+              </p>
             </div>
           </div>
         </div>
 
         <div>
-          <h4 class="text-white font-bold mb-4">Connect with me</h4>
+          <h4 class="text-white font-bold mb-4">
+            {{ translationService.translate('contact', 'connect') }}
+          </h4>
           <div class="flex gap-4">
-            <a href="#" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white hover:-translate-y-1 transition-all shadow-lg">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <a
+              href="#"
+              target="_blank"
+              class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white hover:-translate-y-1 transition-all shadow-lg"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
             </a>
-            <a href="#" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-slate-700 hover:text-white hover:-translate-y-1 transition-all shadow-lg">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <a
+              href="#"
+              target="_blank"
+              class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-slate-700 hover:text-white hover:-translate-y-1 transition-all shadow-lg"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
             </a>
-            <a href="#" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-400 hover:text-white hover:-translate-y-1 transition-all shadow-lg">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            <a
+              href="#"
+              target="_blank"
+              class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-400 hover:text-white hover:-translate-y-1 transition-all shadow-lg"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
             </a>
           </div>
         </div>
-
       </div>
 
-      <div class="bg-slate-800/50 backdrop-blur-md p-8 rounded-3xl border border-slate-700 shadow-2xl">
+      <div
+        class="bg-slate-800/50 backdrop-blur-md p-8 rounded-3xl border border-slate-700 shadow-2xl"
+      >
         <form class="space-y-6">
           <div>
-            <label class="block text-sm font-bold text-slate-300 mb-2">Your Name</label>
-            <input type="text" class="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="John Doe">
+            <label class="block text-sm font-bold text-slate-300 mb-2">{{
+              translationService.translate('contact', 'nameLabel')
+            }}</label>
+            <input
+              type="text"
+              [placeholder]="translationService.translate('contact', 'namePlaceholder')"
+              class="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            />
           </div>
           <div>
-            <label class="block text-sm font-bold text-slate-300 mb-2">Email Address</label>
-            <input type="email" class="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="john@example.com">
+            <label class="block text-sm font-bold text-slate-300 mb-2">{{
+              translationService.translate('contact', 'emailLabel')
+            }}</label>
+            <input
+              type="email"
+              [placeholder]="translationService.translate('contact', 'emailPlaceholder')"
+              class="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            />
           </div>
           <div>
-            <label class="block text-sm font-bold text-slate-300 mb-2">Message</label>
-            <textarea rows="4" class="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none" placeholder="Tell me about your project..."></textarea>
+            <label class="block text-sm font-bold text-slate-300 mb-2">{{
+              translationService.translate('contact', 'messageLabel')
+            }}</label>
+            <textarea
+              rows="4"
+              [placeholder]="translationService.translate('contact', 'messagePlaceholder')"
+              class="w-full px-4 py-3 rounded-xl bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+            ></textarea>
           </div>
-          <button type="button" class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all">
-            Send Message
+          <button
+            type="button"
+            class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all"
+          >
+            {{ translationService.translate('contact', 'btnSend') }}
           </button>
         </form>
       </div>
-
     </div>
   </div>
 </section>

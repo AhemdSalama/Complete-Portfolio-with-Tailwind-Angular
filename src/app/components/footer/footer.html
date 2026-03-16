@@ -1,21 +1,37 @@
 <footer class="bg-slate-950 border-t border-slate-800 py-8">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-    
-    <div class="text-center md:text-left">
-      <div class="flex items-center justify-center md:justify-start gap-1 font-mono mb-2">
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4"
+  >
+    <div
+      class="text-center md:text-left"
+      [class.md:text-right]="translationService.currentLang === 'ar'"
+    >
+      <div
+        class="flex items-center justify-center md:justify-start gap-1 font-mono mb-2"
+        [class.md:justify-end]="translationService.currentLang === 'ar'"
+      >
         <span class="text-xl font-light text-blue-500">&#123;</span>
         <span class="text-lg font-bold text-slate-200">"dev": "Ahmed_Salama"</span>
         <span class="text-xl font-light text-blue-500">&#125;</span>
       </div>
-      <p class="text-sm text-slate-500">© 2026 Ahmed Salama. All rights reserved.</p>
+      <p class="text-sm text-slate-500">
+        {{ translationService.translate('footer', 'copyright') }}
+      </p>
     </div>
 
     <div class="flex items-center gap-6 text-sm font-medium text-slate-400">
-      <a href="#" class="hover:text-blue-400 transition-colors">Home</a>
-      <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
-      <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
-      <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+      <a href="#" class="hover:text-blue-400 transition-colors">{{
+        translationService.translate('nav', 'home')
+      }}</a>
+      <a href="#about" class="hover:text-blue-400 transition-colors">{{
+        translationService.translate('nav', 'about')
+      }}</a>
+      <a href="#projects" class="hover:text-blue-400 transition-colors">{{
+        translationService.translate('nav', 'projects')
+      }}</a>
+      <a href="#contact" class="hover:text-blue-400 transition-colors">{{
+        translationService.translate('nav', 'contact')
+      }}</a>
     </div>
-
   </div>
 </footer>

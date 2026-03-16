@@ -21,13 +21,14 @@
   </div>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-40 sm:pt-48">
     <div class="text-center max-w-3xl mx-auto mb-20">
-      <h2 class="text-4xl font-extrabold text-white tracking-tight mb-4">About Me</h2>
+      <h2 class="text-4xl font-extrabold text-white tracking-tight mb-4">
+        {{ translationService.translate('about', 'title') }}
+      </h2>
       <div
         class="h-1.5 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-6 shadow-[0_0_15px_rgba(59,130,246,0.5)]"
       ></div>
       <p class="text-lg text-slate-400 font-medium">
-        Passionate about creating innovative solutions that combine modern web technologies with
-        artificial intelligence and automation.
+        {{ translationService.translate('about', 'subtitle') }}
       </p>
     </div>
 
@@ -39,42 +40,36 @@
         <div
           class="prifile-image relative w-full h-full bg-slate-900 rounded-3xl p-2 shadow-2xl border border-slate-700"
         >
-          <!-- <div class="w-full h-full bg-slate-800 rounded-2xl overflow-hidden flex items-center justify-center">
-            <svg class="w-20 h-20 text-slate-500 group-hover:scale-110 group-hover:text-purple-400 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            </div> -->
-          <img src="profile.jpg" alt="" />
+          <img src="profile.jpg" alt="" class="w-full h-full object-cover rounded-2xl" />
         </div>
       </div>
 
       <div class="flex-1 space-y-6">
-        <h3 class="text-3xl font-bold text-white">Transforming Ideas Into Reality</h3>
+        <h3 class="text-3xl font-bold text-white">
+          {{ translationService.translate('about', 'heading') }}
+        </h3>
         <p class="text-lg text-slate-300 leading-relaxed">
-          With over 5 years of experience in web development and a deep passion for AI and
-          automation, I specialize in building scalable applications that leverage cutting-edge
-          technology to solve real-world problems.
+          {{ translationService.translate('about', 'desc1') }}
         </p>
         <p class="text-lg text-slate-300 leading-relaxed mb-6">
-          My expertise spans from crafting beautiful, responsive user interfaces to developing
-          intelligent automation systems that streamline business processes and boost productivity.
+          {{ translationService.translate('about', 'desc2') }}
         </p>
 
         <div class="flex flex-wrap gap-4 pt-2">
           <span
             class="px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-sm font-bold text-slate-200 shadow-lg hover:bg-white/10 hover:border-blue-400/50 hover:text-blue-400 transition-all cursor-default"
           >
-            Full-Stack Development
+            {{ translationService.translate('about', 'badge1') }}
           </span>
           <span
             class="px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-sm font-bold text-slate-200 shadow-lg hover:bg-white/10 hover:border-purple-400/50 hover:text-purple-400 transition-all cursor-default"
           >
-            AI Solutions
+            {{ translationService.translate('about', 'badge2') }}
           </span>
           <span
             class="px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-sm font-bold text-slate-200 shadow-lg hover:bg-white/10 hover:border-emerald-400/50 hover:text-emerald-400 transition-all cursor-default"
           >
-            Process Automation
+            {{ translationService.translate('about', 'badge3') }}
           </span>
         </div>
       </div>
@@ -90,7 +85,7 @@
         <h4
           class="text-xl font-bold text-white mb-6 group-hover:text-blue-400 transition-colors relative z-10"
         >
-          Web Development
+          {{ translationService.translate('about', 'card1Title') }}
         </h4>
         <ul class="space-y-4 relative z-10">
           <li class="flex items-center text-slate-300 font-medium">
@@ -169,7 +164,7 @@
         <h4
           class="text-xl font-bold text-white mb-6 group-hover:text-purple-400 transition-colors relative z-10"
         >
-          AI & Machine Learning
+          {{ translationService.translate('about', 'card2Title') }}
         </h4>
         <ul class="space-y-4 relative z-10">
           <li class="flex items-center text-slate-300 font-medium">
@@ -186,7 +181,7 @@
                 d="M13 10V3L4 14h7v7l9-11h-7z"
               ></path>
             </svg>
-            OpenAI GPT Integration
+            {{ translationService.translate('about', 'card2Bullet1') }}
           </li>
           <li class="flex items-center text-slate-300 font-medium">
             <svg
@@ -218,7 +213,7 @@
                 d="M13 10V3L4 14h7v7l9-11h-7z"
               ></path>
             </svg>
-            NLP & Computer Vision
+            {{ translationService.translate('about', 'card2Bullet3') }}
           </li>
           <li class="flex items-center text-slate-300 font-medium">
             <svg
@@ -234,7 +229,7 @@
                 d="M13 10V3L4 14h7v7l9-11h-7z"
               ></path>
             </svg>
-            Model Deployment
+            {{ translationService.translate('about', 'card2Bullet4') }}
           </li>
         </ul>
       </div>
@@ -248,7 +243,7 @@
         <h4
           class="text-xl font-bold text-white mb-6 group-hover:text-emerald-400 transition-colors relative z-10"
         >
-          Automation
+          {{ translationService.translate('about', 'card3Title') }}
         </h4>
         <ul class="space-y-4 relative z-10">
           <li class="flex items-center text-slate-300 font-medium">
@@ -265,7 +260,7 @@
                 d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
               ></path>
             </svg>
-            Workflow Automation
+            {{ translationService.translate('about', 'card3Bullet1') }}
           </li>
           <li class="flex items-center text-slate-300 font-medium">
             <svg
@@ -281,7 +276,7 @@
                 d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
               ></path>
             </svg>
-            API Integration
+            {{ translationService.translate('about', 'card3Bullet2') }}
           </li>
           <li class="flex items-center text-slate-300 font-medium">
             <svg
@@ -313,7 +308,7 @@
                 d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
               ></path>
             </svg>
-            Python Scripting
+            {{ translationService.translate('about', 'card3Bullet4') }}
           </li>
         </ul>
       </div>

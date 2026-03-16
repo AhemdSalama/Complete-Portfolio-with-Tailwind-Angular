@@ -6,6 +6,7 @@
       class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-blue-600 mb-10 transition-colors group"
     >
       <svg
+        [class.rotate-180]="translationService.currentLang === 'ar'"
         class="w-5 h-5 transition-transform group-hover:-translate-x-1"
         fill="none"
         stroke="currentColor"
@@ -18,16 +19,15 @@
           d="M10 19l-7-7m0 0l7-7m-7 7h18"
         ></path>
       </svg>
-      Back to Portfolio
+      {{ translationService.translate('details', 'back') }}
     </a>
 
     <div class="mb-16">
       <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-6">
-        Full Portfolio
+        {{ translationService.translate('allProjects', 'title') }}
       </h1>
       <p class="text-xl text-slate-500 max-w-3xl leading-relaxed font-medium">
-        Explore my complete collection of projects across Web Development, Artificial Intelligence,
-        and Smart Automation.
+        {{ translationService.translate('allProjects', 'subtitle') }}
       </p>
     </div>
 
@@ -41,7 +41,7 @@
         [class.text-slate-600]="activeFilter !== filter"
         class="px-7 py-3 rounded-2xl font-bold text-sm transition-all duration-300 shadow-sm border border-slate-200 hover:border-slate-400"
       >
-        {{ filter }}
+        {{ getTranslatedFilter(filter) }}
       </button>
     </div>
 
@@ -54,7 +54,7 @@
           <span
             class="absolute top-4 left-4 z-10 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-black text-slate-900 border border-slate-200"
           >
-            {{ p.category }}
+            {{ getTranslatedFilter(p.category) }}
           </span>
           <img
             [src]="p.image"
@@ -64,9 +64,11 @@
         </div>
 
         <div class="p-8 flex flex-col flex-grow">
-          <h3 class="text-2xl font-bold text-slate-900 mb-3">{{ p.title }}</h3>
+          <h3 class="text-2xl font-bold text-slate-900 mb-3">
+            {{ translationService.currentLang === 'en' ? p.title : p.titleAr }}
+          </h3>
           <p class="text-slate-500 mb-6 leading-relaxed flex-grow font-medium">
-            {{ p.description }}
+            {{ translationService.currentLang === 'en' ? p.description : p.descriptionAr }}
           </p>
 
           <div class="flex flex-wrap gap-2 mb-8">
@@ -81,18 +83,25 @@
           <div class="flex items-center justify-between pt-6 border-t border-slate-100 mt-auto">
             <div class="flex gap-2">
               <div class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold">
-                GitHub
+                {{ translationService.translate('projects', 'btnGithub') }}
               </div>
               <div class="px-4 py-2 rounded-xl bg-blue-50 text-blue-700 text-xs font-bold">
-                Demo
+                {{ translationService.translate('projects', 'btnDemo') }}
               </div>
             </div>
+
             <a
               [routerLink]="['/project', p.id]"
-              class="text-sm font-black text-slate-900 hover:text-blue-600 flex items-center gap-1 transition-colors"
+              class="text-sm font-black text-slate-900 hover:text-blue-600 flex items-center gap-1 transition-colors group/link"
             >
-              Details
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {{ translationService.translate('projects', 'btnDetails') }}
+              <svg
+                [class.rotate-180]="translationService.currentLang === 'ar'"
+                class="w-4 h-4 transition-transform group-hover/link:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"

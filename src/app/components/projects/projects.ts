@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Translation } from '../../services/translation';
 
 @Component({
   selector: 'app-projects',
@@ -12,109 +13,76 @@ export class Projects {
   filters = ['All', 'Web', 'AI', 'Automation'];
   activeFilter = 'All';
 
+  // حقن خدمة الترجمة
+  constructor(public translationService: Translation) {}
+
   projects = [
-    // --- WEB PROJECTS ---
     {
       id: 1,
-      title: 'Modern E-Commerce Platform',
       category: 'Web',
-      description:
-        'Full-stack e-commerce solution with real-time inventory and Stripe payment integration.',
+      title: 'Modern E-Commerce Platform',
+      titleAr: 'منصة تجارة إلكترونية حديثة',
+      description: 'Full-stack e-commerce solution with real-time inventory and Stripe payment integration.',
+      descriptionAr: 'حل متكامل للتجارة الإلكترونية مع إدارة مخزون حية وربط بوابات دفع Stripe.',
       tags: ['Next.js', 'Stripe', 'Tailwind'],
-      githubLink: '#',
-      demoLink: '#',
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=600',
+      githubLink: '#', demoLink: '#',
+      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=600'
     },
     {
       id: 2,
-      title: 'Real Estate Dashboard',
       category: 'Web',
-      description:
-        'Property management system with interactive maps and dynamic filtering for agents.',
+      title: 'Real Estate Dashboard',
+      titleAr: 'لوحة تحكم للعقارات',
+      description: 'Property management system with interactive maps and dynamic filtering for agents.',
+      descriptionAr: 'نظام إدارة عقارات مع خرائط تفاعلية وفلترة ديناميكية للوكلاء.',
       tags: ['Angular', 'Firebase', 'Maps API'],
-      githubLink: '#',
-      demoLink: '#',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=600',
+      githubLink: '#', demoLink: '#',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=600'
     },
     {
       id: 3,
-      title: 'Fitness Tracking App',
       category: 'Web',
-      description:
-        'Social platform for athletes to track workouts and share progress with a community.',
+      title: 'Fitness Tracking App',
+      titleAr: 'تطبيق تتبع اللياقة البدنية',
+      description: 'Social platform for athletes to track workouts and share progress with a community.',
+      descriptionAr: 'منصة اجتماعية للرياضيين لتتبع التمارين ومشاركة التقدم مع المجتمع.',
       tags: ['React', 'Node.js', 'PostgreSQL'],
-      githubLink: '#',
-      demoLink: '#',
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=600',
+      githubLink: '#', demoLink: '#',
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=600'
     },
-
-    // --- AI PROJECTS ---
     {
       id: 4,
-      title: 'AI-Powered Support Chatbot',
       category: 'AI',
-      description:
-        'Intelligent customer service bot using GPT-4 to handle complex queries with high accuracy.',
+      title: 'AI-Powered Support Chatbot',
+      titleAr: 'بوت دعم فني بالذكاء الاصطناعي',
+      description: 'Intelligent customer service bot using GPT-4 to handle complex queries with high accuracy.',
+      descriptionAr: 'بوت خدمة عملاء ذكي يستخدم GPT-4 للرد على الاستفسارات المعقدة بدقة عالية.',
       tags: ['Python', 'OpenAI', 'FastAPI'],
-      githubLink: '#',
-      demoLink: '#',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600',
+      githubLink: '#', demoLink: '#',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600'
     },
     {
       id: 5,
-      title: 'CV Analyzer & Scorer',
       category: 'AI',
-      description:
-        'NLP tool that scans resumes and matches them to job descriptions using semantic search.',
+      title: 'CV Analyzer & Scorer',
+      titleAr: 'محلل ومقيم السير الذاتية',
+      description: 'NLP tool that scans resumes and matches them to job descriptions using semantic search.',
+      descriptionAr: 'أداة معالجة لغات (NLP) تفحص السير الذاتية وتطابقها مع الوظائف باستخدام البحث الدلالي.',
       tags: ['Python', 'NLP', 'TensorFlow'],
-      githubLink: '#',
-      demoLink: '#',
-      image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=600',
+      githubLink: '#', demoLink: '#',
+      image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=600'
     },
     {
       id: 6,
-      title: 'Smart Image Generator',
-      category: 'AI',
-      description:
-        'AI tool that generates high-quality marketing images based on text descriptions.',
-      tags: ['Diffusers', 'Python', 'React'],
-      githubLink: '#',
-      demoLink: '#',
-      image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600',
-    },
-
-    // --- AUTOMATION PROJECTS ---
-    {
-      id: 7,
+      category: 'Automation',
       title: 'Workflow Automation Hub',
-      category: 'Automation',
-      description:
-        'Integrated hub that connects CRM, Email, and Slack to automate sales pipelines.',
+      titleAr: 'منصة أتمتة مسارات العمل',
+      description: 'Integrated hub that connects CRM, Email, and Slack to automate sales pipelines.',
+      descriptionAr: 'منصة متكاملة تربط أنظمة إدارة العملاء والبريد وSlack لأتمتة عمليات المبيعات.',
       tags: ['Zapier', 'Make.com', 'APIs'],
-      githubLink: '#',
-      demoLink: '#',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600',
-    },
-    {
-      id: 8,
-      title: 'Social Media Auto-Poster',
-      category: 'Automation',
-      description: 'System that generates and schedules content across 5 platforms automatically.',
-      tags: ['Python', 'GPT-4', 'Puppeteer'],
-      githubLink: '#',
-      demoLink: '#',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600',
-    },
-    {
-      id: 9,
-      title: 'Email Marketing Suite',
-      category: 'Automation',
-      description: 'Personalized cold email campaigns with automated follow-ups and lead scoring.',
-      tags: ['Node.js', 'Redis', 'SMTP'],
-      githubLink: '#',
-      demoLink: '#',
-      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600',
-    },
+      githubLink: '#', demoLink: '#',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600'
+    }
   ];
 
   setFilter(filter: string) {
@@ -122,10 +90,19 @@ export class Projects {
   }
 
   get filteredProjects() {
-  const filtered = this.activeFilter === 'All' 
-    ? this.projects 
-    : this.projects.filter(p => p.category === this.activeFilter);
-    
-  return filtered.slice(0, 6); // ده اللي هيخلي الصفحة الرئيسية شيك ومش زحمة
-}
+    const filtered = this.activeFilter === 'All' 
+      ? this.projects 
+      : this.projects.filter(p => p.category === this.activeFilter);
+      
+    return filtered.slice(0, 6);
+  }
+
+  // دالة صغيرة عشان تترجم أزرار الفلترة في الـ HTML
+  getTranslatedFilter(filter: string): string {
+    if (filter === 'All') return this.translationService.translate('projects', 'filterAll');
+    if (filter === 'Web') return this.translationService.translate('projects', 'filterWeb');
+    if (filter === 'AI') return this.translationService.translate('projects', 'filterAI');
+    if (filter === 'Automation') return this.translationService.translate('projects', 'filterAuto');
+    return filter;
+  }
 }
