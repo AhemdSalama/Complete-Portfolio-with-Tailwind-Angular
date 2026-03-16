@@ -11,6 +11,7 @@ import { Translation } from '../../services/translation';
 })
 export class Navbar {
   isMobileMenuOpen = false;
+isDarkMode: any;
 
   // حقن السيرفيس عشان نقدر نستخدمها في ה-HTML
   constructor(public translation: Translation) {}
