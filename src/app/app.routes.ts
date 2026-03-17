@@ -7,7 +7,7 @@ import { Login } from './pages/login/login';
 
 export const routes: Routes = [
   { path: '', component: Home },
-  { path: 'admin', component: Dashboard },
+  { path: 'dashboard', component: Dashboard },
   { path: 'project/:id', component: ProjectDetails },
   { path: 'all-projects', component: AllProjects },
   { path: 'login', component: Login },

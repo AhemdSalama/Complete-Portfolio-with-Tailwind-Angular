@@ -6,14 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProjectService {
-  private apiUrl = "http://localhost:5000/api/projects";
+  private apiUrl = 'https://complete-portfolio-backendwith-express.onrender.com/api/projects';
 
   constructor(private http: HttpClient) {}
 
   getAllProjects() {
     return this.http.get(this.apiUrl);
   }
-  getProjectById(id: String):Observable<any> {
+  getProjectById(id: String): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 }

@@ -1,55 +1,172 @@
-<div class="min-h-screen bg-slate-100 dark:bg-slate-950 flex flex-col justify-center items-center p-4 relative overflow-hidden transition-colors duration-500" dir="ltr">
-  
-  <div class="absolute inset-0 z-0 pointer-events-none opacity-50 dark:opacity-100 transition-opacity duration-500">
-    <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 dark:bg-blue-600/20 rounded-full blur-[120px] animate-pulse" style="animation-duration: 8s"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-purple-600/10 dark:bg-purple-600/20 rounded-full blur-[120px] animate-pulse" style="animation-duration: 10s"></div>
+<div
+  class="min-h-screen bg-slate-100 dark:bg-slate-950 flex flex-col justify-center items-center p-4 relative overflow-hidden transition-colors duration-500"
+  dir="ltr"
+>
+  <div
+    class="absolute inset-0 z-0 pointer-events-none opacity-50 dark:opacity-100 transition-opacity duration-500"
+  >
+    <div
+      class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 dark:bg-blue-600/20 rounded-full blur-[120px] animate-pulse"
+      style="animation-duration: 8s"
+    ></div>
+    <div
+      class="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-purple-600/10 dark:bg-purple-600/20 rounded-full blur-[120px] animate-pulse"
+      style="animation-duration: 10s"
+    ></div>
   </div>
 
   <div class="absolute top-8 left-8 z-20">
-    <a routerLink="/" class="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors group text-sm font-bold">
-      <svg class="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+    <a
+      routerLink="/"
+      class="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors group text-sm font-bold"
+    >
+      <svg
+        class="w-5 h-5 transition-transform group-hover:-translate-x-1"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+        ></path>
+      </svg>
       Back to Website
     </a>
   </div>
 
   <div class="w-full max-w-md relative z-10">
-    
     <div class="text-center mb-10">
-      <div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md dark:shadow-2xl mb-6 transition-colors duration-500">
-        <svg class="w-10 h-10 text-blue-600 dark:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+      <div
+        class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md dark:shadow-2xl mb-6 transition-colors duration-500"
+      >
+        <svg
+          class="w-10 h-10 text-blue-600 dark:text-blue-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+          ></path>
+        </svg>
       </div>
-      <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2 transition-colors duration-500">Admin Portal</h1>
+      <h1
+        class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2 transition-colors duration-500"
+      >
+        Admin Portal
+      </h1>
       <p class="text-slate-500 font-medium">Restricted Access. Authorized personnel only.</p>
     </div>
 
-    <div class="bg-white dark:bg-slate-900/60 backdrop-blur-xl p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-2xl transition-colors duration-500">
-      <form class="space-y-6" (submit)="$event.preventDefault()">
-        
+    @if (errorMessage) {
+      <div
+        class="mb-6 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 rounded-xl text-sm font-bold text-center animate-fade-in"
+      >
+        {{ errorMessage }}
+      </div>
+    }
+
+    <div
+      class="bg-white dark:bg-slate-900/60 backdrop-blur-xl p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-2xl transition-colors duration-500"
+    >
+      <form class="space-y-6" (ngSubmit)="onSubmit()">
         <div>
-          <label class="block text-sm font-bold text-slate-700 dark:text-slate-400 mb-2 transition-colors">Admin Email</label>
+          <label
+            class="block text-sm font-bold text-slate-700 dark:text-slate-400 mb-2 transition-colors"
+            >Admin Email</label
+          >
           <div class="relative">
             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <svg class="h-5 w-5 text-slate-400 dark:text-slate-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path></svg>
+              <svg
+                class="h-5 w-5 text-slate-400 dark:text-slate-500 transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                ></path>
+              </svg>
             </div>
-            <input type="email" placeholder="admin@example.com" class="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
+            <input
+              type="email"
+              name="email"
+              [(ngModel)]="email"
+              required
+              placeholder="admin@example.com"
+              class="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+            />
           </div>
         </div>
 
         <div>
-          <label class="block text-sm font-bold text-slate-700 dark:text-slate-400 mb-2 transition-colors">Password</label>
+          <label
+            class="block text-sm font-bold text-slate-700 dark:text-slate-400 mb-2 transition-colors"
+            >Password</label
+          >
           <div class="relative">
             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <svg class="h-5 w-5 text-slate-400 dark:text-slate-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+              <svg
+                class="h-5 w-5 text-slate-400 dark:text-slate-500 transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                ></path>
+              </svg>
             </div>
-            <input type="password" placeholder="••••••••" class="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
+            <input
+              type="password"
+              name="password"
+              [(ngModel)]="password"
+              required
+              placeholder="••••••••"
+              class="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+            />
           </div>
         </div>
 
-        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all">
-          Sign In to Dashboard
+        <button
+          type="submit"
+          [disabled]="isLoading"
+          class="flex justify-center items-center w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+        >
+          @if (isLoading) {
+            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              ></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            Authenticating...
+          } @else {
+            Sign In to Dashboard
+          }
         </button>
       </form>
     </div>
-
   </div>
 </div>
