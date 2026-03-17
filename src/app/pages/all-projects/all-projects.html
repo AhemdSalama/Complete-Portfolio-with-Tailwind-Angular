@@ -57,23 +57,23 @@
             {{ getTranslatedFilter(p.category) }}
           </span>
           <img
-            [src]="p.image"
-            [alt]="p.title"
+            [src]="p.thumbnailUrl"
+            [alt]="p.title_en"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
         </div>
 
         <div class="p-8 flex flex-col flex-grow">
           <h3 class="text-2xl font-bold text-slate-900 mb-3">
-            {{ translationService.currentLang === 'en' ? p.title : p.titleAr }}
+            {{ translationService.currentLang === 'en' ? p.title_en : p.title_ar }}
           </h3>
           <p class="text-slate-500 mb-6 leading-relaxed flex-grow font-medium">
-            {{ translationService.currentLang === 'en' ? p.description : p.descriptionAr }}
+            {{ translationService.currentLang === 'en' ? p.shortDescription_en : p.shortDescription_ar }}
           </p>
 
           <div class="flex flex-wrap gap-2 mb-8">
             <span
-              *ngFor="let tag of p.tags"
+              *ngFor="let tag of p.techStack"
               class="px-3 py-1.5 bg-slate-50 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold"
             >
               {{ tag }}
@@ -91,7 +91,7 @@
             </div>
 
             <a
-              [routerLink]="['/project', p.id]"
+              [routerLink]="['/project', p._id]"
               class="text-sm font-black text-slate-900 hover:text-blue-600 flex items-center gap-1 transition-colors group/link"
             >
               {{ translationService.translate('projects', 'btnDetails') }}

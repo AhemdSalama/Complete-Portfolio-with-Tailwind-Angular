@@ -23,27 +23,27 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-      <div *ngFor="let p of filteredProjects"
+      <div *ngFor="let p of displayedProjects"
         class="group bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl hover:border-blue-200 transition-all duration-500 flex flex-col h-full overflow-hidden hover:-translate-y-2">
         <div class="relative h-60 overflow-hidden bg-slate-100">
           <span
             class="absolute top-4 left-4 z-10 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-black text-slate-900 border border-slate-200 shadow-sm">
             {{ getTranslatedFilter(p.category) }}
           </span>
-          <img [src]="p.image" [alt]="p.title"
+          <img [src]="p.thumbnailUrl" [alt]="p.title_en"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
         </div>
 
         <div class="p-8 flex flex-col flex-grow">
           <h3 class="text-2xl font-bold text-slate-900 mb-3">
-            {{ translationService.currentLang === 'en' ? p.title : p.titleAr }}
+            {{ translationService.currentLang === 'en' ? p.title_en : p.title_ar }}
           </h3>
           <p class="text-slate-500 mb-6 leading-relaxed flex-grow font-medium">
-            {{ translationService.currentLang === 'en' ? p.description : p.descriptionAr }}
+            {{ translationService.currentLang === 'en' ? p.shortDescription_en : p.shortDescription_ar }}
           </p>
 
           <div class="flex flex-wrap gap-2 mb-8">
-            <span *ngFor="let tag of p.tags"
+            <span *ngFor="let tag of p.techStack"
               class="px-3 py-1.5 bg-slate-50 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold">
               {{ tag }}
             </span>
@@ -51,17 +51,17 @@
 
           <div class="flex items-center justify-between pt-6 border-t border-slate-100 mt-auto">
             <div class="flex gap-2">
-              <a [href]="p.githubLink"
+              <a [href]="p.githubLink" target="_blank"
                 class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-colors">
                 {{ translationService.translate('projects', 'btnGithub') }}
               </a>
-              <a [href]="p.demoLink"
+              <a [href]="p.demoLink" target="_blank"
                 class="px-4 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-bold transition-colors">
                 {{ translationService.translate('projects', 'btnDemo') }}
               </a>
             </div>
 
-            <a [routerLink]="['/project', p.id]"
+            <a [routerLink]="['/project', p._id]"
               class="text-sm font-black text-slate-900 hover:text-blue-600 flex items-center gap-1 transition-colors group/link">
               {{ translationService.translate('projects', 'btnDetails') }}
               <svg [class.rotate-180]="translationService.currentLang === 'ar'"
