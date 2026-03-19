@@ -1,0 +1,188 @@
+<div class="max-w-6xl mx-auto pb-20 px-4">
+  <div class="flex justify-between items-center mb-8">
+    <h1 class="text-3xl font-black text-slate-900">
+      {{ isEditMode ? 'Edit Project' : 'Add New Project' }}
+    </h1>
+    <button
+      routerLink="/dashboard/projects"
+      class="text-slate-500 font-bold hover:text-slate-800 transition-colors flex items-center gap-2"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+      </svg>
+      Back
+    </button>
+  </div>
+
+  <form
+    [formGroup]="projectForm"
+    (ngSubmit)="onSubmit()"
+    class="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left"
+  >
+    <div class="lg:col-span-2 space-y-6">
+      <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Title (EN) *</label>
+            <input
+              formControlName="title_en"
+              type="text"
+              class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">العنوان (AR) *</label>
+            <input
+              formControlName="title_ar"
+              type="text"
+              class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none text-right"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-1"
+            >Short Description (EN) *</label
+          >
+          <textarea
+            formControlName="shortDescription_en"
+            rows="2"
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none"
+          ></textarea>
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-1 text-right"
+            >الوصف القصير (AR) *</label
+          >
+          <textarea
+            formControlName="shortDescription_ar"
+            rows="2"
+            class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none text-right"
+          ></textarea>
+        </div>
+
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1"
+              >Detailed Content (EN) *</label
+            >
+            <quill-editor formControlName="content_en"></quill-editor>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1 text-right"
+              >المحتوى التفصيلي (AR) *</label
+            >
+            <quill-editor formControlName="content_ar" class="text-right"></quill-editor>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+      <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+        <h3 class="text-lg font-bold text-slate-800 border-b pb-2">Project Metadata</h3>
+
+        <div class="grid grid-cols-1 gap-4">
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Slug *</label>
+            <input
+              formControlName="slug"
+              type="text"
+              placeholder="project-slug-format"
+              class="w-full px-4 py-2 rounded-lg border border-slate-200"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Category *</label>
+            <input
+              formControlName="category"
+              type="text"
+              placeholder="e.g. AI, Web, Mobile"
+              class="w-full px-4 py-2 rounded-lg border border-slate-200"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Thumbnail URL *</label>
+            <input
+              formControlName="thumbnailUrl"
+              type="text"
+              class="w-full px-4 py-2 rounded-lg border border-slate-200"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1">Role (EN) *</label>
+            <input
+              formControlName="role_en"
+              type="text"
+              class="w-full px-4 py-2 rounded-lg border border-slate-200"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-1 text-right"
+              >الدور (AR) *</label
+            >
+            <input
+              formControlName="role_ar"
+              type="text"
+              class="w-full px-4 py-2 rounded-lg border border-slate-200 text-right"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-1">Duration *</label>
+          <input
+            formControlName="duration"
+            type="text"
+            placeholder="e.g. 3 Months"
+            class="w-full px-4 py-2 rounded-lg border border-slate-200"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-1"
+            >Tech Stack (Comma sep) *</label
+          >
+          <input
+            formControlName="techStack"
+            type="text"
+            class="w-full px-4 py-2 rounded-lg border border-slate-200"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-1">GitHub Link *</label>
+          <input
+            formControlName="githubLink"
+            type="text"
+            class="w-full px-4 py-2 rounded-lg border border-slate-200"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-1">Demo Link *</label>
+          <input
+            formControlName="demoLink"
+            type="text"
+            class="w-full px-4 py-2 rounded-lg border border-slate-200"
+          />
+        </div>
+
+        <div class="flex items-center gap-2 pt-2">
+          <input formControlName="isPublished" type="checkbox" class="w-5 h-5 accent-blue-600" />
+          <label class="text-sm font-bold text-slate-700">Publish Project</label>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-black rounded-2xl shadow-xl shadow-blue-600/20 transition-all uppercase tracking-widest"
+      >
+        {{ isEditMode ? 'Update' : 'Create' }}
+      </button>
+    </div>
+  </form>
+</div>

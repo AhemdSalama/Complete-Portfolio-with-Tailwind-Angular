@@ -1,0 +1,63 @@
+<div class="max-w-5xl mx-auto pb-20">
+  <h1 class="text-3xl font-black text-slate-900 mb-8">Profile Settings</h1>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="space-y-8">
+    
+    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+      <h3 class="text-xl font-bold text-blue-600 border-b pb-2">Hero & Identity</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-1">Owner Name</label>
+          <input formControlName="ownerName" type="text" class="w-full px-4 py-3 rounded-xl border border-slate-200">
+        </div>
+        <div formGroupName="heroSection">
+          <label class="block text-sm font-bold text-slate-700 mb-1">Main Title (Job)</label>
+          <input formControlName="mainTitle" type="text" class="w-full px-4 py-3 rounded-xl border border-slate-200">
+        </div>
+      </div>
+      <div formGroupName="heroSection" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-1">Sub Title (Welcome Message)</label>
+          <input formControlName="subTitle" type="text" class="w-full px-4 py-3 rounded-xl border border-slate-200">
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-1">CV Link (Google Drive/Cloudinary)</label>
+          <input formControlName="cvLink" type="text" class="w-full px-4 py-3 rounded-xl border border-slate-200">
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-xl font-bold text-blue-600">Skills Stack</h3>
+        <button type="button" (click)="addSkill()" class="text-sm bg-blue-50 text-blue-600 px-4 py-2 rounded-xl font-bold hover:bg-blue-100">+ Add Skill</button>
+      </div>
+      
+      <div formArrayName="skills" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        @for (skill of skills.controls; track $index; let i = $index) {
+          <div [formGroupName]="i" class="p-4 border border-slate-100 rounded-2xl bg-slate-50/50 flex gap-3 items-end">
+            <div class="flex-1 space-y-2">
+              <input formControlName="name" placeholder="Skill Name" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm">
+              <select formControlName="category" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm">
+                <option value="Frontend">Frontend</option>
+                <option value="Backend">Backend</option>
+                <option value="Database">Database</option>
+                <option value="Tools">Tools</option>
+              </select>
+            </div>
+            <button type="button" (click)="removeSkill(i)" class="p-2 text-red-400 hover:text-red-600">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+            </button>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="flex justify-end">
+      <button type="submit" [disabled]="profileForm.invalid" class="px-10 py-4 bg-blue-600 text-white font-black rounded-2xl shadow-lg hover:bg-blue-700 transition-all disabled:opacity-50">
+        SAVE ALL SETTINGS
+      </button>
+    </div>
+
+  </form>
+</div>

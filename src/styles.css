@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
+@import 'quill/dist/quill.snow.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,4 +8,25 @@
 /* الكلاس ده هيتضاف أوتوماتيك لتاج الـ HTML لما نقلب عربي */
 .font-arabic {
   font-family: 'Tajawal', sans-serif !important;
+}
+/* 1. اجبر المحتوى يلف مهما كان طول الكلمة */
+.ql-editor {
+  white-space: pre-wrap !important; /* بيحافظ على المسافات وبيلف السطر */
+  /* word-wrap: break-word !important;  */
+  /* بيكسر الكلمة لو أطول من العرض */
+  overflow-wrap: break-word !important;
+  font-family: 'Inter', sans-serif; /* اختياري: بيخلي الخط أشيك */
+  line-height: 1.6; /* بيدي مساحة مريحة بين السطور */
+}
+
+/* 2. امنع الـ Container نفسه إنه يوسع بالعرض */
+.ql-container {
+  width: 100% !important;
+  table-layout: fixed !important;
+}
+
+/* 3. تنسيق خاص للمحتوى العربي جوه الـ Editor */
+.ql-editor.ql-align-right {
+  direction: rtl !important;
+  text-align: right !important;
 }
