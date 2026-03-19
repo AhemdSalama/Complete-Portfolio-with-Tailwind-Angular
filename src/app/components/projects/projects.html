@@ -61,7 +61,7 @@
               </a>
             </div>
 
-            <a [routerLink]="['/project', p._id]"
+            <a [routerLink]="['/projects', p.slug]"
               class="text-sm font-black text-slate-900 hover:text-blue-600 flex items-center gap-1 transition-colors group/link">
               {{ translationService.translate('projects', 'btnDetails') }}
               <svg [class.rotate-180]="translationService.currentLang === 'ar'"

@@ -43,18 +43,17 @@ export class AllProjects implements OnInit {
       },
     });
   }
-  applyFilter() {
+ applyFilter() {
     if (this.activeFilter === 'All') {
-      this.displayedProjects = this.allProjects.slice(0, 6);
+      this.displayedProjects = this.allProjects; // في صفحة All بنعرض كله مش بنعمل slice(0, 6)
     } else {
       this.displayedProjects = this.allProjects
-        .filter((p) => p.category === this.activeFilter)
-        .slice(0, 6);
+        .filter((p) => p.category === this.activeFilter);
     }
   }
   setFilter(filter: string) {
     this.activeFilter = filter;
-    this.displayedProjects = this.filteredProjects;
+    this.applyFilter(); // 🚀 ندهنا applyFilter الصح عشان الفلتر يشتغل
     this.cdr.detectChanges();
   }
 

@@ -4,11 +4,12 @@ import { Dashboard } from './pages/dashboard/dashboard';
 import { ProjectDetails } from './pages/project-details/project-details';
 import { AllProjects } from './pages/all-projects/all-projects';
 import { Login } from './pages/login/login';
+import { authGuard } from './services/auth.guard';
 
 export const routes: Routes = [
   { path: '', component: Home },
-  { path: 'dashboard', component: Dashboard },
-  { path: 'project/:id', component: ProjectDetails },
+  { path: 'dashboard', canActivate: [authGuard], component: Dashboard },
+  { path: 'projects/:id', component: ProjectDetails },
   { path: 'all-projects', component: AllProjects },
   { path: 'login', component: Login },
   { path: '**', redirectTo: '' }, // Redirect any unknown paths to home

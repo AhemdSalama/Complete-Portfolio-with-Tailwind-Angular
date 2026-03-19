@@ -7,27 +7,31 @@ import { tap } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = "https://complete-portfolio-backendwith-express.onrender.com/api/auth";
+  // private apiUrl = 'https://complete-portfolio-backendwith-express.onrender.com/api/auth';
+  private apiUrl = 'http://localhost:5000/api/auth';
 
   constructor(
     private http: HttpClient,
-    private router:Router
-  ){}
+    private router: Router,
+  ) {}
 
-  login(credentials:any){
+  login(credentials: any) {
     return this.http.post(`${this.apiUrl}/login`, credentials).pipe(
-      tap((res:any)=>{
-        if(res&& res.token){
-          localStorage.setItem('admin_token',res.token);
+      tap((res: any) => {
+        if (res && res.token) {
+          localStorage.setItem('admin_token', res.token);
         }
-      })
-    )
+      }),
+    );
   }
-  logout(){
+  logout() {
     localStorage.removeItem('admin_token');
     this.router.navigate(['/login']);
   }
-  isLoggedIn():boolean{
+  isLoggedIn(): boolean {
     return !!localStorage.getItem('admin_token');
+  }
+  getToken(): string | null {
+    return localStorage.getItem('admin_token');
   }
 }

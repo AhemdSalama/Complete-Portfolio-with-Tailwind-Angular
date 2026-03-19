@@ -1,23 +1,15 @@
 <section id="about" class="relative bg-slate-950 overflow-hidden pb-24">
   <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-10">
-    <svg
-      class="relative block w-full h-[60px] md:h-[120px]"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1200 120"
-      preserveAspectRatio="none"
-    >
+    <svg class="relative block w-full h-[60px] md:h-[120px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+      preserveAspectRatio="none">
       <path d="M1200 120L0 16.48V0h1200v120z" class="fill-white"></path>
     </svg>
   </div>
   <div class="absolute inset-0 z-0 pointer-events-none mt-32">
-    <div
-      class="absolute top-0 -left-20 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse"
-      style="animation-duration: 7s"
-    ></div>
-    <div
-      class="absolute bottom-10 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse"
-      style="animation-delay: 3s"
-    ></div>
+    <div class="absolute top-0 -left-20 w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse"
+      style="animation-duration: 7s"></div>
+    <div class="absolute bottom-10 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse"
+      style="animation-delay: 3s"></div>
   </div>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-40 sm:pt-48">
     <div class="text-center max-w-3xl mx-auto mb-20">
@@ -25,8 +17,8 @@
         {{ translationService.translate('about', 'title') }}
       </h2>
       <div
-        class="h-1.5 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-6 shadow-[0_0_15px_rgba(59,130,246,0.5)]"
-      ></div>
+        class="h-1.5 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-6 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+      </div>
       <p class="text-lg text-slate-400 font-medium">
         {{ translationService.translate('about', 'subtitle') }}
       </p>
@@ -35,11 +27,10 @@
     <div class="flex flex-col lg:flex-row gap-16 items-center mb-24">
       <div class="relative w-64 h-64 sm:w-80 sm:h-80 shrink-0 group">
         <div
-          class="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 rounded-3xl blur-xl opacity-50 group-hover:opacity-100 transition duration-500"
-        ></div>
+          class="absolute -inset-2 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 rounded-3xl blur-xl opacity-50 group-hover:opacity-100 transition duration-500">
+        </div>
         <div
-          class="prifile-image relative w-full h-full bg-slate-900 rounded-3xl p-2 shadow-2xl border border-slate-700"
-        >
+          class="prifile-image relative w-full h-full bg-slate-900 rounded-3xl p-2 shadow-2xl border border-slate-700">
           <img src="profile.jpg" alt="" class="w-full h-full object-cover rounded-2xl" />
         </div>
       </div>
@@ -57,18 +48,15 @@
 
         <div class="flex flex-wrap gap-4 pt-2">
           <span
-            class="px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-sm font-bold text-slate-200 shadow-lg hover:bg-white/10 hover:border-blue-400/50 hover:text-blue-400 transition-all cursor-default"
-          >
+            class="px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-sm font-bold text-slate-200 shadow-lg hover:bg-white/10 hover:border-blue-400/50 hover:text-blue-400 transition-all cursor-default">
             {{ translationService.translate('about', 'badge1') }}
           </span>
           <span
-            class="px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-sm font-bold text-slate-200 shadow-lg hover:bg-white/10 hover:border-purple-400/50 hover:text-purple-400 transition-all cursor-default"
-          >
+            class="px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-sm font-bold text-slate-200 shadow-lg hover:bg-white/10 hover:border-purple-400/50 hover:text-purple-400 transition-all cursor-default">
             {{ translationService.translate('about', 'badge2') }}
           </span>
           <span
-            class="px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-sm font-bold text-slate-200 shadow-lg hover:bg-white/10 hover:border-emerald-400/50 hover:text-emerald-400 transition-all cursor-default"
-          >
+            class="px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-sm font-bold text-slate-200 shadow-lg hover:bg-white/10 hover:border-emerald-400/50 hover:text-emerald-400 transition-all cursor-default">
             {{ translationService.translate('about', 'badge3') }}
           </span>
         </div>
@@ -77,78 +65,39 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div
-        class="p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl hover:bg-white/10 hover:border-blue-500/30 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden"
-      >
+        class="p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl hover:bg-white/10 hover:border-blue-500/30 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
         <div
-          class="absolute -right-10 -top-10 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/40 transition-colors duration-500"
-        ></div>
-        <h4
-          class="text-xl font-bold text-white mb-6 group-hover:text-blue-400 transition-colors relative z-10"
-        >
+          class="absolute -right-10 -top-10 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/40 transition-colors duration-500">
+        </div>
+        <h4 class="text-xl font-bold text-white mb-6 group-hover:text-blue-400 transition-colors relative z-10">
           {{ translationService.translate('about', 'card1Title') }}
         </h4>
         <ul class="space-y-4 relative z-10">
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-blue-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path>
+            <svg class="w-5 h-5 text-blue-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             Angular, React & Next.js
           </li>
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-blue-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path>
+            <svg class="w-5 h-5 text-blue-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             Node.js & Express
           </li>
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-blue-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path>
+            <svg class="w-5 h-5 text-blue-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             Tailwind CSS
           </li>
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-blue-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path>
+            <svg class="w-5 h-5 text-blue-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             PostgreSQL & MongoDB
           </li>
@@ -156,78 +105,39 @@
       </div>
 
       <div
-        class="p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl hover:bg-white/10 hover:border-purple-500/30 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden"
-      >
+        class="p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl hover:bg-white/10 hover:border-purple-500/30 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
         <div
-          class="absolute -right-10 -top-10 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl group-hover:bg-purple-500/40 transition-colors duration-500"
-        ></div>
-        <h4
-          class="text-xl font-bold text-white mb-6 group-hover:text-purple-400 transition-colors relative z-10"
-        >
+          class="absolute -right-10 -top-10 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl group-hover:bg-purple-500/40 transition-colors duration-500">
+        </div>
+        <h4 class="text-xl font-bold text-white mb-6 group-hover:text-purple-400 transition-colors relative z-10">
           {{ translationService.translate('about', 'card2Title') }}
         </h4>
         <ul class="space-y-4 relative z-10">
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-purple-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"
-              ></path>
+            <svg class="w-5 h-5 text-purple-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+              </path>
             </svg>
             {{ translationService.translate('about', 'card2Bullet1') }}
           </li>
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-purple-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"
-              ></path>
+            <svg class="w-5 h-5 text-purple-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+              </path>
             </svg>
             TensorFlow & PyTorch
           </li>
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-purple-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"
-              ></path>
+            <svg class="w-5 h-5 text-purple-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+              </path>
             </svg>
             {{ translationService.translate('about', 'card2Bullet3') }}
           </li>
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-purple-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"
-              ></path>
+            <svg class="w-5 h-5 text-purple-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+              </path>
             </svg>
             {{ translationService.translate('about', 'card2Bullet4') }}
           </li>
@@ -235,78 +145,43 @@
       </div>
 
       <div
-        class="p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl hover:bg-white/10 hover:border-emerald-500/30 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden"
-      >
+        class="p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl hover:bg-white/10 hover:border-emerald-500/30 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
         <div
-          class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-2xl group-hover:bg-emerald-500/40 transition-colors duration-500"
-        ></div>
-        <h4
-          class="text-xl font-bold text-white mb-6 group-hover:text-emerald-400 transition-colors relative z-10"
-        >
+          class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-2xl group-hover:bg-emerald-500/40 transition-colors duration-500">
+        </div>
+        <h4 class="text-xl font-bold text-white mb-6 group-hover:text-emerald-400 transition-colors relative z-10">
           {{ translationService.translate('about', 'card3Title') }}
         </h4>
         <ul class="space-y-4 relative z-10">
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-emerald-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-              ></path>
+            <svg class="w-5 h-5 text-emerald-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+              </path>
             </svg>
             {{ translationService.translate('about', 'card3Bullet1') }}
           </li>
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-emerald-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-              ></path>
+            <svg class="w-5 h-5 text-emerald-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+              </path>
             </svg>
             {{ translationService.translate('about', 'card3Bullet2') }}
           </li>
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-emerald-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-              ></path>
+            <svg class="w-5 h-5 text-emerald-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+              </path>
             </svg>
             Zapier & Make.com
           </li>
           <li class="flex items-center text-slate-300 font-medium">
-            <svg
-              class="w-5 h-5 text-emerald-400 mr-3 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-              ></path>
+            <svg class="w-5 h-5 text-emerald-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+              </path>
             </svg>
             {{ translationService.translate('about', 'card3Bullet4') }}
           </li>

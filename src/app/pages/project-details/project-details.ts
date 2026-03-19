@@ -11,33 +11,14 @@ import { ProjectService } from '../../services/project';
   templateUrl: './project-details.html',
 })
 export class ProjectDetails implements OnInit {
-  project: any;
-
+  project: any = null;
+  errorMessage: string = '';
+  
+  // Variables for Image Gallery Modal
   isModalOpen = false;
   selectedImageUrl = '';
   isZoomed = false;
 
-  openModal(url: string) {
-    this.selectedImageUrl = url;
-    this.isModalOpen = true;
-    this.isZoomed = false;
-    document.body.style.overflow = 'hidden';
-  }
-
-  closeModal() {
-    this.isModalOpen = false;
-    setTimeout(() => {
-      ((this.selectedImageUrl = ''), 300);
-    });
-    document.body.style.overflow = 'auto';
-  }
-
-  toggleZoom(event: Event) {
-    event.stopPropagation();
-    this.isZoomed = !this.isZoomed;
-  }
-
-  // حقن الـ TranslationService مع الـ ActivatedRoute
   constructor(
     private route: ActivatedRoute,
     public translationService: Translation,
@@ -49,20 +30,45 @@ export class ProjectDetails implements OnInit {
     window.scrollTo(0, 0);
 
     this.route.paramMap.subscribe((params) => {
-      const projectId = params.get('id');
-      console.log('Project ID from route:', projectId);
-      if (projectId) {
-        this.projectService.getProjectById(projectId).subscribe({
+      // بنقرا الـ Slug من اللينك (حتى لو اسمه id في الـ routes)
+      const projectSlug = params.get('id'); 
+      
+      if (projectSlug) {
+        this.projectService.getProjectBySlug(projectSlug).subscribe({
           next: (data) => {
-            console.log('Project details received from backend:', data);
             this.project = data;
-            this.cdr.markForCheck(); // تأكد من تحديث العرض بعد تحميل البيانات
+            this.errorMessage = '';
+            this.cdr.markForCheck();
           },
           error: (error) => {
             console.error('Error fetching project details:', error);
+            this.errorMessage = 'Project not found or invalid link!';
+            this.project = null;
+            this.cdr.markForCheck();
           },
         });
       }
     });
+  }
+
+  // Modal Methods
+  openModal(url: string) {
+    this.selectedImageUrl = url;
+    this.isModalOpen = true;
+    this.isZoomed = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+    setTimeout(() => {
+      this.selectedImageUrl = '';
+    }, 300);
+    document.body.style.overflow = 'auto';
+  }
+
+  toggleZoom(event: Event) {
+    event.stopPropagation();
+    this.isZoomed = !this.isZoomed;
   }
 }

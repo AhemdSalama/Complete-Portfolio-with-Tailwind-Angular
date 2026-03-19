@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProjectService {
-  private apiUrl = 'https://complete-portfolio-backendwith-express.onrender.com/api/projects';
+  // private apiUrl = 'https://complete-portfolio-backendwith-express.onrender.com/api/projects';
+  private apiUrl = 'http://localhost:5000/api/projects';
 
   constructor(private http: HttpClient) {}
 
@@ -15,5 +16,8 @@ export class ProjectService {
   }
   getProjectById(id: String): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
+  }
+  getProjectBySlug(slug: String): Observable<any> {
+    return this.http.get(`${this.apiUrl}/slug/${slug}`);
   }
 }
